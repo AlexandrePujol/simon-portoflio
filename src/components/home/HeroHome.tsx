@@ -175,7 +175,7 @@ export const HeroHome = () => {
       <div className="hidden sm:block h-[var(--fullScreen)] z-10 fixed top-0 left-0 right-0 ">
         <Scene />
       </div>
-      <div className="h-[var(--fullScreen)] flex flex-col justify-between gap-6 pt-10 pb-10">
+      <div className="h-[calc(var(--fullScreen)-1.5rem)] flex flex-col justify-between gap-6 pt-10 pb-10">
         <div
           data-scroll
           data-scroll-speed="0.2"
@@ -190,20 +190,21 @@ export const HeroHome = () => {
             className="object-cover"
           />
         </div>
-        <div className="sm:flex justify-between items-end">
+        <div className="sm:flex justify-between items-end gap-6">
           {/* wait until isLoaded is true to trigger the anim */}
 
           <motion.h2
             initial={{ opacity: 0, y: 40 }}
             animate={!isLoaded ? { opacity: 0, y: 40 } : { opacity: 1, y: 0 }}
             transition={{ ease: "easeOut", delay: 0.15 }}
-            className="hidden md:block pb-1"
+            className="hidden md:block pb-1 flex-1 "
           >
-            Hi, here is an overview of <br />
-            my personal artistic work.
+            Through photography, I aim to isolate elements from their primary{" "}
+            <br className="lg:hidden xl:block" />
+            function in order to reveal their aesthetic dimension.
           </motion.h2>
           <h1
-            className={`${spartan.className} text-end flex-none text-2xl align-bottom leading-none sm:flex-1 sm:text-[48px] lg:text-[64px]`}
+            className={`${spartan.className}  text-end flex-1 md:flex-none text-2xl align-bottom leading-none sm:flex-1 sm:text-[48px] lg:text-[64px]`}
           >
             <AnimatedLetters
               string="SIMON EYCHENNE"
