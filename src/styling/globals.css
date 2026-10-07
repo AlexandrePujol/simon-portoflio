@@ -103,9 +103,14 @@ body {
   width: 20px;
   height: 20px;
   z-index: 99;
-  transition: all ease-out 0.25s;
-  transition-property: width, height, transform, background-color,
-    backdrop-filter;
+  /* Keep this on its own stable compositing layer: without it, Safari
+     rebuilds the blend-mode layer on every transform/filter change and
+     the cursor visibly glitches. transform/backdrop-filter are driven
+     by framer-motion directly, so they're left out of the transition. */
+  will-change: transform;
+  backface-visibility: hidden;
+  transition: width ease-out 0.25s, height ease-out 0.25s,
+    background-color ease-out 0.25s;
 }
 
 #CustomCursor.cta,
