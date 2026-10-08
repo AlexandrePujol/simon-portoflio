@@ -11,7 +11,9 @@
     "start": "next start",
     "lint": "next lint",
     "ts-node": "ts-node --compiler-options \"{\\\"module\\\":\\\"commonjs\\\"}\"",
-    "migrate:homepage": "tsx migrate-homepage.ts"
+    "migrate:homepage": "tsx migrate-homepage.ts",
+    "migrate:work": "tsx migrate-work.ts",
+    "prune:assets": "tsx prune-assets.ts"
   },
   "dependencies": {
     "@babel/preset-react": "^7.22.5",
