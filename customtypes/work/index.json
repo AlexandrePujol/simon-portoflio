@@ -65,6 +65,12 @@
                 "label": "Date"
               },
               "type": "Text"
+            },
+            "dominant_color": {
+              "config": {
+                "label": "Dominant color"
+              },
+              "type": "Color"
             }
           },
           "label": "Summer"
@@ -99,6 +105,12 @@
                 "label": "Date"
               },
               "type": "Text"
+            },
+            "dominant_color": {
+              "config": {
+                "label": "Dominant color"
+              },
+              "type": "Color"
             }
           },
           "label": "Autumn"
@@ -133,6 +145,12 @@
                 "label": "Date"
               },
               "type": "Text"
+            },
+            "dominant_color": {
+              "config": {
+                "label": "Dominant color"
+              },
+              "type": "Color"
             }
           },
           "label": "Winter"
@@ -167,6 +185,12 @@
                 "label": "Date"
               },
               "type": "Text"
+            },
+            "dominant_color": {
+              "config": {
+                "label": "Dominant color"
+              },
+              "type": "Color"
             }
           },
           "label": "Spring"

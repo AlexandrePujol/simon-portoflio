@@ -77,6 +77,12 @@
                 "single": "paragraph,strong"
               },
               "type": "StructuredText"
+            },
+            "dominant_color": {
+              "config": {
+                "label": "Dominant color"
+              },
+              "type": "Color"
             }
           },
           "label": "Gallery"
