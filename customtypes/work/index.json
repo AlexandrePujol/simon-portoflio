@@ -1,0 +1,173 @@
+{
+  "format": "page",
+  "id": "work",
+  "json": {
+    "Main": {
+      "slices": {
+        "config": {
+          "choices": {}
+        },
+        "fieldset": "Slice Zone",
+        "type": "Slices"
+      },
+      "summer": {
+        "config": {
+          "fields": {
+            "photo": {
+              "config": {
+                "label": "Photo"
+              },
+              "type": "Image"
+            },
+            "title": {
+              "config": {
+                "label": "Title"
+              },
+              "type": "Text"
+            },
+            "place": {
+              "config": {
+                "label": "Place"
+              },
+              "type": "Text"
+            },
+            "date": {
+              "config": {
+                "label": "Date"
+              },
+              "type": "Text"
+            }
+          },
+          "label": "Summer"
+        },
+        "type": "Group"
+      },
+      "autumn": {
+        "config": {
+          "fields": {
+            "photo": {
+              "config": {
+                "label": "Photo"
+              },
+              "type": "Image"
+            },
+            "title": {
+              "config": {
+                "label": "Title"
+              },
+              "type": "Text"
+            },
+            "place": {
+              "config": {
+                "label": "Place"
+              },
+              "type": "Text"
+            },
+            "date": {
+              "config": {
+                "label": "Date"
+              },
+              "type": "Text"
+            }
+          },
+          "label": "Autumn"
+        },
+        "type": "Group"
+      },
+      "winter": {
+        "config": {
+          "fields": {
+            "photo": {
+              "config": {
+                "label": "Photo"
+              },
+              "type": "Image"
+            },
+            "title": {
+              "config": {
+                "label": "Title"
+              },
+              "type": "Text"
+            },
+            "place": {
+              "config": {
+                "label": "Place"
+              },
+              "type": "Text"
+            },
+            "date": {
+              "config": {
+                "label": "Date"
+              },
+              "type": "Text"
+            }
+          },
+          "label": "Winter"
+        },
+        "type": "Group"
+      },
+      "spring": {
+        "config": {
+          "fields": {
+            "photo": {
+              "config": {
+                "label": "Photo"
+              },
+              "type": "Image"
+            },
+            "title": {
+              "config": {
+                "label": "Title"
+              },
+              "type": "Text"
+            },
+            "place": {
+              "config": {
+                "label": "Place"
+              },
+              "type": "Text"
+            },
+            "date": {
+              "config": {
+                "label": "Date"
+              },
+              "type": "Text"
+            }
+          },
+          "label": "Spring"
+        },
+        "type": "Group"
+      }
+    },
+    "SEO & Metadata": {
+      "meta_title": {
+        "config": {
+          "label": "Meta Title",
+          "placeholder": "A title of the page used for social media and search engines"
+        },
+        "type": "Text"
+      },
+      "meta_description": {
+        "config": {
+          "label": "Meta Description",
+          "placeholder": "A brief summary of the page"
+        },
+        "type": "Text"
+      },
+      "meta_image": {
+        "config": {
+          "constraint": {
+            "height": 1260,
+            "width": 2400
+          },
+          "label": "Meta Image",
+          "thumbnails": []
+        },
+        "type": "Image"
+      }
+    }
+  },
+  "label": "Gallery",
+  "repeatable": false,
+  "status": true
+}
