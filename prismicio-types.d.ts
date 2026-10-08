@@ -238,7 +238,291 @@ interface HomepageDocumentData {
  */
 export type HomepageDocument<Lang extends string = string> = prismic.PrismicDocumentWithoutUID<Simplify<HomepageDocumentData>, "homepage", Lang>;
 
-export type AllDocumentTypes = HomepageDocument;
+type WorkDocumentDataSlicesSlice = never
+
+/**
+ * Item in *Gallery → Summer*
+ */
+export interface WorkDocumentDataSummerItem {
+	/**
+	 * Photo field in *Gallery → Summer*
+	 *
+	 * - **Field Type**: Image
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: work.summer[].photo
+	 * - **Documentation**: https://prismic.io/docs/fields/image
+	 */
+	photo: prismic.ImageField<never>;
+	
+	/**
+	 * Title field in *Gallery → Summer*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: work.summer[].title
+	 * - **Documentation**: https://prismic.io/docs/fields/text
+	 */
+	title: prismic.KeyTextField;
+	
+	/**
+	 * Place field in *Gallery → Summer*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: work.summer[].place
+	 * - **Documentation**: https://prismic.io/docs/fields/text
+	 */
+	place: prismic.KeyTextField;
+	
+	/**
+	 * Date field in *Gallery → Summer*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: work.summer[].date
+	 * - **Documentation**: https://prismic.io/docs/fields/text
+	 */
+	date: prismic.KeyTextField;
+}
+
+/**
+ * Item in *Gallery → Autumn*
+ */
+export interface WorkDocumentDataAutumnItem {
+	/**
+	 * Photo field in *Gallery → Autumn*
+	 *
+	 * - **Field Type**: Image
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: work.autumn[].photo
+	 * - **Documentation**: https://prismic.io/docs/fields/image
+	 */
+	photo: prismic.ImageField<never>;
+	
+	/**
+	 * Title field in *Gallery → Autumn*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: work.autumn[].title
+	 * - **Documentation**: https://prismic.io/docs/fields/text
+	 */
+	title: prismic.KeyTextField;
+	
+	/**
+	 * Place field in *Gallery → Autumn*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: work.autumn[].place
+	 * - **Documentation**: https://prismic.io/docs/fields/text
+	 */
+	place: prismic.KeyTextField;
+	
+	/**
+	 * Date field in *Gallery → Autumn*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: work.autumn[].date
+	 * - **Documentation**: https://prismic.io/docs/fields/text
+	 */
+	date: prismic.KeyTextField;
+}
+
+/**
+ * Item in *Gallery → Winter*
+ */
+export interface WorkDocumentDataWinterItem {
+	/**
+	 * Photo field in *Gallery → Winter*
+	 *
+	 * - **Field Type**: Image
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: work.winter[].photo
+	 * - **Documentation**: https://prismic.io/docs/fields/image
+	 */
+	photo: prismic.ImageField<never>;
+	
+	/**
+	 * Title field in *Gallery → Winter*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: work.winter[].title
+	 * - **Documentation**: https://prismic.io/docs/fields/text
+	 */
+	title: prismic.KeyTextField;
+	
+	/**
+	 * Place field in *Gallery → Winter*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: work.winter[].place
+	 * - **Documentation**: https://prismic.io/docs/fields/text
+	 */
+	place: prismic.KeyTextField;
+	
+	/**
+	 * Date field in *Gallery → Winter*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: work.winter[].date
+	 * - **Documentation**: https://prismic.io/docs/fields/text
+	 */
+	date: prismic.KeyTextField;
+}
+
+/**
+ * Item in *Gallery → Spring*
+ */
+export interface WorkDocumentDataSpringItem {
+	/**
+	 * Photo field in *Gallery → Spring*
+	 *
+	 * - **Field Type**: Image
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: work.spring[].photo
+	 * - **Documentation**: https://prismic.io/docs/fields/image
+	 */
+	photo: prismic.ImageField<never>;
+	
+	/**
+	 * Title field in *Gallery → Spring*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: work.spring[].title
+	 * - **Documentation**: https://prismic.io/docs/fields/text
+	 */
+	title: prismic.KeyTextField;
+	
+	/**
+	 * Place field in *Gallery → Spring*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: work.spring[].place
+	 * - **Documentation**: https://prismic.io/docs/fields/text
+	 */
+	place: prismic.KeyTextField;
+	
+	/**
+	 * Date field in *Gallery → Spring*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: work.spring[].date
+	 * - **Documentation**: https://prismic.io/docs/fields/text
+	 */
+	date: prismic.KeyTextField;
+}
+
+/**
+ * Content for Gallery documents
+ */
+interface WorkDocumentData {
+	/**
+	 * Slice Zone field in *Gallery*
+	 *
+	 * - **Field Type**: Slice Zone
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: work.slices[]
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/slices
+	 */
+	slices: prismic.SliceZone<WorkDocumentDataSlicesSlice>;
+	
+	/**
+	 * Summer field in *Gallery*
+	 *
+	 * - **Field Type**: Group
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: work.summer[]
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/fields/repeatable-group
+	 */
+	summer: prismic.GroupField<Simplify<WorkDocumentDataSummerItem>>;
+	
+	/**
+	 * Autumn field in *Gallery*
+	 *
+	 * - **Field Type**: Group
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: work.autumn[]
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/fields/repeatable-group
+	 */
+	autumn: prismic.GroupField<Simplify<WorkDocumentDataAutumnItem>>;
+	
+	/**
+	 * Winter field in *Gallery*
+	 *
+	 * - **Field Type**: Group
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: work.winter[]
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/fields/repeatable-group
+	 */
+	winter: prismic.GroupField<Simplify<WorkDocumentDataWinterItem>>;
+	
+	/**
+	 * Spring field in *Gallery*
+	 *
+	 * - **Field Type**: Group
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: work.spring[]
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/fields/repeatable-group
+	 */
+	spring: prismic.GroupField<Simplify<WorkDocumentDataSpringItem>>;/**
+	 * Meta Title field in *Gallery*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: A title of the page used for social media and search engines
+	 * - **API ID Path**: work.meta_title
+	 * - **Tab**: SEO & Metadata
+	 * - **Documentation**: https://prismic.io/docs/fields/text
+	 */
+	meta_title: prismic.KeyTextField;
+	
+	/**
+	 * Meta Description field in *Gallery*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: A brief summary of the page
+	 * - **API ID Path**: work.meta_description
+	 * - **Tab**: SEO & Metadata
+	 * - **Documentation**: https://prismic.io/docs/fields/text
+	 */
+	meta_description: prismic.KeyTextField;
+	
+	/**
+	 * Meta Image field in *Gallery*
+	 *
+	 * - **Field Type**: Image
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: work.meta_image
+	 * - **Tab**: SEO & Metadata
+	 * - **Documentation**: https://prismic.io/docs/fields/image
+	 */
+	meta_image: prismic.ImageField<never>;
+}
+
+/**
+ * Gallery document from Prismic
+ *
+ * - **API ID**: `work`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/content-modeling
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type WorkDocument<Lang extends string = string> = prismic.PrismicDocumentWithoutUID<Simplify<WorkDocumentData>, "work", Lang>;
+
+export type AllDocumentTypes = HomepageDocument | WorkDocument;
 
 declare module "@prismicio/client" {
 	interface CreateClient {
@@ -259,6 +543,13 @@ declare module "@prismicio/client" {
 			HomepageDocumentData,
 			HomepageDocumentDataSlicesSlice,
 			HomepageDocumentDataGalleryItem,
+			WorkDocument,
+			WorkDocumentData,
+			WorkDocumentDataSlicesSlice,
+			WorkDocumentDataSummerItem,
+			WorkDocumentDataAutumnItem,
+			WorkDocumentDataWinterItem,
+			WorkDocumentDataSpringItem,
 			AllDocumentTypes
 		}
 	}
