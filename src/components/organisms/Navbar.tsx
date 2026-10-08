@@ -4,7 +4,7 @@ import React, { useEffect, useState } from "react";
 
 import { AnimLink } from "../atoms";
 import { Container } from "../molecules";
-import { motion } from "framer-motion";
+import { motion, Variants } from "motion/react";
 import { usePathname } from "next/navigation";
 import { useLoadingContext } from "@/context/LoadingContext";
 import { SVGButtons } from "../work";
@@ -20,7 +20,7 @@ type Props = {
   setIsMenuOpen: (e: boolean) => void;
 };
 
-const containerAnim = {
+const containerAnim: Variants = {
   hidden: {
     transition: {
       staggerChildren: 0.05,

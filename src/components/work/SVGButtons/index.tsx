@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { rectangle, gridRectangle } from "./paths";
 
-import { animate, useMotionValue } from "framer-motion";
+import { animate, useMotionValue } from "motion/react";
 import { SVGMorph } from "@/components/atoms";
 import { useOverviewContext } from "@/context/OverviewContext";
 

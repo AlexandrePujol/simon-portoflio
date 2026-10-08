@@ -9,7 +9,7 @@ import {
   motion,
   useScroll,
   useTransform,
-} from "framer-motion";
+} from "motion/react";
 
 import { createAlt } from "@/utils/helpers";
 import { usePathname } from "next/navigation";

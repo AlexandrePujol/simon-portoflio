@@ -5,7 +5,7 @@ import { spartan } from "../molecules/Layout";
 import * as THREE from "three";
 import { useFrame, useLoader } from "@react-three/fiber";
 import { Power4, gsap } from "gsap";
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 
 import { ease } from "@/utils/store";
 import { useWindowSize } from "@/hooks";

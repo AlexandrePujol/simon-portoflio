@@ -106,7 +106,7 @@ body {
   /* Keep this on its own stable compositing layer: without it, Safari
      rebuilds the blend-mode layer on every transform/filter change and
      the cursor visibly glitches. transform/backdrop-filter are driven
-     by framer-motion directly, so they're left out of the transition. */
+     by motion directly, so they're left out of the transition. */
   will-change: transform;
   backface-visibility: hidden;
   transition: width ease-out 0.25s, height ease-out 0.25s,

@@ -1,7 +1,7 @@
 import React, { useRef } from "react";
 
 import { AnimatedWords } from "../atoms";
-import { useInView } from "framer-motion";
+import { useInView } from "motion/react";
 
 type Props = {};
 

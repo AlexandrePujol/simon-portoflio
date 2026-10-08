@@ -9,7 +9,7 @@ import {
 
 import { photos } from "@/data/photos";
 
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence, motion } from "motion/react";
 
 import { gsap } from "gsap";
 import { Flip } from "gsap/dist/Flip";

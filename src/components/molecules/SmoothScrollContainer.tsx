@@ -2,7 +2,7 @@ import React, { RefObject, useEffect, useRef, useState } from "react";
 import { usePathname } from "next/navigation";
 
 import { LocomotiveScrollProvider } from "react-locomotive-scroll";
-import { useScroll, useSpring, useTransform, motion } from "framer-motion";
+import { useScroll, useSpring, useTransform, motion } from "motion/react";
 
 import { useWindowSize } from "@/hooks";
 import useIsMobile from "@/hooks/useIsMobile";

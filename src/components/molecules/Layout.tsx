@@ -3,7 +3,7 @@ import localFont from "next/font/local";
 
 import { Navbar } from "@/components/organisms";
 import Head from "next/head";
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence, motion } from "motion/react";
 import { usePathname } from "next/navigation";
 import { useEffect } from "react";
 import { useWindowSize } from "@/hooks";

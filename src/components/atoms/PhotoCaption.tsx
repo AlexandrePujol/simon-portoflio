@@ -3,7 +3,7 @@
 import React, { useRef } from "react";
 import { Caption } from "@/types";
 
-import { useInView, motion } from "framer-motion";
+import { useInView, motion } from "motion/react";
 import { AnimatedWords } from "./AnimWords";
 import AnimatedLetters from "./AnimLetters";
 

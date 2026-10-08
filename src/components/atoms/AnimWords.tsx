@@ -2,13 +2,13 @@
 
 import React from "react";
 // Framer Motion
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence, motion, Easing } from "motion/react";
 import { usePathname } from "next/navigation";
 
 interface Props {
   string?: string;
   delay?: number;
-  ease?: number[] | string | undefined;
+  ease?: Easing | undefined;
   duration?: number | undefined;
   stagger?: number | undefined;
   start?: boolean | undefined;
@@ -20,7 +20,7 @@ interface Props {
 export const AnimatedWords = ({
   string,
   delay = 0.4,
-  ease = [0.6, 0.01, -0.05, 0.95],
+  ease = [0.6, 0.01, -0.05, 0.95] as const,
   duration = 0.45,
   stagger = 0.02,
   start = true,

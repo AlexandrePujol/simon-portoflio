@@ -1,5 +1,5 @@
 import { useEffect, useRef } from "react";
-import { motion, useMotionValue, useSpring } from "framer-motion";
+import { motion, useMotionValue, useSpring } from "motion/react";
 
 // Context
 import { useCursorContext } from "@/context/CursorContext";
@@ -16,7 +16,7 @@ export default function CustomCursor() {
   // Raw mouse position, updated without triggering a React re-render.
   const mouseX = useMotionValue(-20);
   const mouseY = useMotionValue(-20);
-  // Spring-smoothed position: framer-motion drives this off its own RAF loop
+  // Spring-smoothed position: motion drives this off its own RAF loop
   // instead of a CSS transition fighting the per-mousemove transform writes,
   // which is what was causing the Safari-only glitching.
   const x = useSpring(mouseX, { damping: 32, stiffness: 500, mass: 0.2 });

@@ -3,7 +3,7 @@
 import React from "react";
 import Link from "next/link";
 
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 import { useCursorContext } from "../../context/CursorContext";
 import { usePathname } from "next/navigation";
 
@@ -13,7 +13,7 @@ type Props = {
 };
 
 const duration = 0.15;
-const ease = "easeOut";
+const ease = "easeOut" as const;
 
 const containerAnim = {
   normal: {},

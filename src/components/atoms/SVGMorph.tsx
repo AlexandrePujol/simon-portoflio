@@ -1,5 +1,5 @@
 import { interpolate } from "@siluat/flubber";
-import { useTransform, MotionValue, motion } from "framer-motion";
+import { useTransform, MotionValue, motion } from "motion/react";
 
 type Props = {
   progress: MotionValue;

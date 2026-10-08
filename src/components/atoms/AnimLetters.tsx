@@ -2,12 +2,12 @@
 
 import React from "react";
 // Framer Motion
-import { motion } from "framer-motion";
+import { motion, Easing } from "motion/react";
 
 interface Props {
   string?: string;
   delay?: number;
-  ease?: number[] | string | undefined;
+  ease?: Easing | undefined;
   duration?: number | undefined;
   rotate?: number | undefined;
   stagger?: number | undefined;
@@ -22,7 +22,7 @@ export const AnimatedLetters = ({
   y = 400,
   rotate = 0,
   delay = 0.4,
-  ease = [0.6, 0.01, -0.05, 0.95],
+  ease = [0.6, 0.01, -0.05, 0.95] as const,
   duration = 0.45,
   stagger = 0.02,
   start = true,

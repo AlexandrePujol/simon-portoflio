@@ -4,7 +4,7 @@ import React, { useRef } from "react";
 import { AnimPhoto, PhotoCaption } from "../atoms";
 import { Photo } from "@/types";
 import { HomeContainer } from "../molecules";
-import { useInView, motion } from "framer-motion";
+import { useInView, motion } from "motion/react";
 
 type Props = {
   photo: Photo;

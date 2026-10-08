@@ -1,7 +1,7 @@
 import React from "react";
 
 import { rectangle, gridRectangle } from "@/components/work/SVGButtons/paths";
-import { useMotionValue, animate } from "framer-motion";
+import { useMotionValue, animate } from "motion/react";
 import { SVGMorph } from "@/components/atoms/SVGMorph";
 
 export default function Test() {

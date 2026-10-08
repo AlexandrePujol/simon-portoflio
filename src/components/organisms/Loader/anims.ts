@@ -1,6 +1,6 @@
-import { Variants } from "framer-motion";
+import { Variants } from "motion/react";
 
-export const containerAnim = {
+export const containerAnim: Variants = {
   exit: {
     y: "100%",
     transition: {

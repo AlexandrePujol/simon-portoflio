@@ -1,6 +1,6 @@
-import { Variants } from "framer-motion";
+import { Variants } from "motion/react";
 
-export const fadeOut = {
+export const fadeOut: Variants = {
   hidden: {
     opacity: 0,
     transition: {

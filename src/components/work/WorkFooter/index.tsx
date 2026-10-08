@@ -1,4 +1,4 @@
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence, motion } from "motion/react";
 import { useOverviewContext } from "../../../context/OverviewContext";
 import { useCursorContext } from "../../../context/CursorContext";
 import { MouseEvent, useState } from "react";
