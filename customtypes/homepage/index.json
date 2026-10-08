@@ -1,0 +1,124 @@
+{
+  "format": "page",
+  "id": "homepage",
+  "json": {
+    "Main": {
+      "slices": {
+        "config": {
+          "choices": {}
+        },
+        "fieldset": "Slice Zone",
+        "type": "Slices"
+      },
+      "hero_image": {
+        "config": {
+          "label": "Hero image"
+        },
+        "type": "Image"
+      },
+      "hero_tagline": {
+        "config": {
+          "label": "Hero tagline",
+          "single": "paragraph"
+        },
+        "type": "StructuredText"
+      },
+      "about_title": {
+        "config": {
+          "label": "About title",
+          "single": "paragraph"
+        },
+        "type": "StructuredText"
+      },
+      "about_text_left": {
+        "config": {
+          "label": "About text (left)",
+          "single": "paragraph"
+        },
+        "type": "StructuredText"
+      },
+      "about_text_right": {
+        "config": {
+          "label": "About text (right)",
+          "single": "paragraph"
+        },
+        "type": "StructuredText"
+      },
+      "gallery": {
+        "config": {
+          "fields": {
+            "photo": {
+              "config": {
+                "label": "Photo"
+              },
+              "type": "Image"
+            },
+            "title": {
+              "config": {
+                "label": "Title"
+              },
+              "type": "Text"
+            },
+            "place": {
+              "config": {
+                "label": "Place"
+              },
+              "type": "Text"
+            },
+            "date": {
+              "config": {
+                "label": "Date"
+              },
+              "type": "Text"
+            },
+            "blurb": {
+              "config": {
+                "label": "Blurb (optional caption text)",
+                "single": "paragraph,strong"
+              },
+              "type": "StructuredText"
+            }
+          },
+          "label": "Gallery"
+        },
+        "type": "Group"
+      },
+      "outro_image": {
+        "config": {
+          "label": "Outro image"
+        },
+        "type": "Image"
+      }
+    },
+    "SEO & Metadata": {
+      "meta_title": {
+        "config": {
+          "label": "Meta Title",
+          "placeholder": "A title of the page used for social media and search engines"
+        },
+        "type": "Text"
+      },
+      "meta_description": {
+        "config": {
+          "label": "Meta Description",
+          "placeholder": "A brief summary of the page"
+        },
+        "type": "Text"
+      },
+      "meta_image": {
+        "config": {
+          "constraint": {
+            "height": 1260,
+            "width": 2400
+          },
+          "label": "Meta Image",
+          "thumbnails": []
+        },
+        "type": "Image"
+      }
+    }
+  },
+  "label": "Homepage",
+  "repeatable": false,
+  "status": true
+}
