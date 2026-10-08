@@ -9,7 +9,36 @@
         },
         "fieldset": "Slice Zone",
         "type": "Slices"
+      }
+    },
+    "SEO & Metadata": {
+      "meta_title": {
+        "config": {
+          "label": "Meta Title",
+          "placeholder": "A title of the page used for social media and search engines"
+        },
+        "type": "Text"
       },
+      "meta_description": {
+        "config": {
+          "label": "Meta Description",
+          "placeholder": "A brief summary of the page"
+        },
+        "type": "Text"
+      },
+      "meta_image": {
+        "config": {
+          "constraint": {
+            "height": 1260,
+            "width": 2400
+          },
+          "label": "Meta Image",
+          "thumbnails": []
+        },
+        "type": "Image"
+      }
+    },
+    "Summer": {
       "summer": {
         "config": {
           "fields": {
@@ -41,7 +70,9 @@
           "label": "Summer"
         },
         "type": "Group"
-      },
+      }
+    },
+    "Autumn": {
       "autumn": {
         "config": {
           "fields": {
@@ -73,7 +104,9 @@
           "label": "Autumn"
         },
         "type": "Group"
-      },
+      }
+    },
+    "Winter": {
       "winter": {
         "config": {
           "fields": {
@@ -105,7 +138,9 @@
           "label": "Winter"
         },
         "type": "Group"
-      },
+      }
+    },
+    "Spring": {
       "spring": {
         "config": {
           "fields": {
@@ -137,33 +172,6 @@
           "label": "Spring"
         },
         "type": "Group"
-      }
-    },
-    "SEO & Metadata": {
-      "meta_title": {
-        "config": {
-          "label": "Meta Title",
-          "placeholder": "A title of the page used for social media and search engines"
-        },
-        "type": "Text"
-      },
-      "meta_description": {
-        "config": {
-          "label": "Meta Description",
-          "placeholder": "A brief summary of the page"
-        },
-        "type": "Text"
-      },
-      "meta_image": {
-        "config": {
-          "constraint": {
-            "height": 1260,
-            "width": 2400
-          },
-          "label": "Meta Image",
-          "thumbnails": []
-        },
-        "type": "Image"
       }
     }
   },
