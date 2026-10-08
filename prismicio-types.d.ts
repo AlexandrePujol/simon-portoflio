@@ -101,6 +101,16 @@ export interface HomepageDocumentDataGalleryItem {
 	 * - **Documentation**: https://prismic.io/docs/fields/rich-text
 	 */
 	blurb: prismic.RichTextField;
+	
+	/**
+	 * Dominant color field in *Homepage → Gallery*
+	 *
+	 * - **Field Type**: Color
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: homepage.gallery[].dominant_color
+	 * - **Documentation**: https://prismic.io/docs/fields/color
+	 */
+	dominant_color: prismic.ColorField;
 }
 
 /**
@@ -283,6 +293,16 @@ export interface WorkDocumentDataSummerItem {
 	 * - **Documentation**: https://prismic.io/docs/fields/text
 	 */
 	date: prismic.KeyTextField;
+	
+	/**
+	 * Dominant color field in *Gallery → Summer*
+	 *
+	 * - **Field Type**: Color
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: work.summer[].dominant_color
+	 * - **Documentation**: https://prismic.io/docs/fields/color
+	 */
+	dominant_color: prismic.ColorField;
 }
 
 /**
@@ -328,6 +348,16 @@ export interface WorkDocumentDataAutumnItem {
 	 * - **Documentation**: https://prismic.io/docs/fields/text
 	 */
 	date: prismic.KeyTextField;
+	
+	/**
+	 * Dominant color field in *Gallery → Autumn*
+	 *
+	 * - **Field Type**: Color
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: work.autumn[].dominant_color
+	 * - **Documentation**: https://prismic.io/docs/fields/color
+	 */
+	dominant_color: prismic.ColorField;
 }
 
 /**
@@ -373,6 +403,16 @@ export interface WorkDocumentDataWinterItem {
 	 * - **Documentation**: https://prismic.io/docs/fields/text
 	 */
 	date: prismic.KeyTextField;
+	
+	/**
+	 * Dominant color field in *Gallery → Winter*
+	 *
+	 * - **Field Type**: Color
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: work.winter[].dominant_color
+	 * - **Documentation**: https://prismic.io/docs/fields/color
+	 */
+	dominant_color: prismic.ColorField;
 }
 
 /**
@@ -418,6 +458,16 @@ export interface WorkDocumentDataSpringItem {
 	 * - **Documentation**: https://prismic.io/docs/fields/text
 	 */
 	date: prismic.KeyTextField;
+	
+	/**
+	 * Dominant color field in *Gallery → Spring*
+	 *
+	 * - **Field Type**: Color
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: work.spring[].dominant_color
+	 * - **Documentation**: https://prismic.io/docs/fields/color
+	 */
+	dominant_color: prismic.ColorField;
 }
 
 /**
@@ -433,51 +483,7 @@ interface WorkDocumentData {
 	 * - **Tab**: Main
 	 * - **Documentation**: https://prismic.io/docs/slices
 	 */
-	slices: prismic.SliceZone<WorkDocumentDataSlicesSlice>;
-	
-	/**
-	 * Summer field in *Gallery*
-	 *
-	 * - **Field Type**: Group
-	 * - **Placeholder**: *None*
-	 * - **API ID Path**: work.summer[]
-	 * - **Tab**: Main
-	 * - **Documentation**: https://prismic.io/docs/fields/repeatable-group
-	 */
-	summer: prismic.GroupField<Simplify<WorkDocumentDataSummerItem>>;
-	
-	/**
-	 * Autumn field in *Gallery*
-	 *
-	 * - **Field Type**: Group
-	 * - **Placeholder**: *None*
-	 * - **API ID Path**: work.autumn[]
-	 * - **Tab**: Main
-	 * - **Documentation**: https://prismic.io/docs/fields/repeatable-group
-	 */
-	autumn: prismic.GroupField<Simplify<WorkDocumentDataAutumnItem>>;
-	
-	/**
-	 * Winter field in *Gallery*
-	 *
-	 * - **Field Type**: Group
-	 * - **Placeholder**: *None*
-	 * - **API ID Path**: work.winter[]
-	 * - **Tab**: Main
-	 * - **Documentation**: https://prismic.io/docs/fields/repeatable-group
-	 */
-	winter: prismic.GroupField<Simplify<WorkDocumentDataWinterItem>>;
-	
-	/**
-	 * Spring field in *Gallery*
-	 *
-	 * - **Field Type**: Group
-	 * - **Placeholder**: *None*
-	 * - **API ID Path**: work.spring[]
-	 * - **Tab**: Main
-	 * - **Documentation**: https://prismic.io/docs/fields/repeatable-group
-	 */
-	spring: prismic.GroupField<Simplify<WorkDocumentDataSpringItem>>;/**
+	slices: prismic.SliceZone<WorkDocumentDataSlicesSlice>;/**
 	 * Meta Title field in *Gallery*
 	 *
 	 * - **Field Type**: Text
@@ -508,7 +514,43 @@ interface WorkDocumentData {
 	 * - **Tab**: SEO & Metadata
 	 * - **Documentation**: https://prismic.io/docs/fields/image
 	 */
-	meta_image: prismic.ImageField<never>;
+	meta_image: prismic.ImageField<never>;/**
+	 * Summer field in *Gallery*
+	 *
+	 * - **Field Type**: Group
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: work.summer[]
+	 * - **Tab**: Summer
+	 * - **Documentation**: https://prismic.io/docs/fields/repeatable-group
+	 */
+	summer: prismic.GroupField<Simplify<WorkDocumentDataSummerItem>>;/**
+	 * Autumn field in *Gallery*
+	 *
+	 * - **Field Type**: Group
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: work.autumn[]
+	 * - **Tab**: Autumn
+	 * - **Documentation**: https://prismic.io/docs/fields/repeatable-group
+	 */
+	autumn: prismic.GroupField<Simplify<WorkDocumentDataAutumnItem>>;/**
+	 * Winter field in *Gallery*
+	 *
+	 * - **Field Type**: Group
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: work.winter[]
+	 * - **Tab**: Winter
+	 * - **Documentation**: https://prismic.io/docs/fields/repeatable-group
+	 */
+	winter: prismic.GroupField<Simplify<WorkDocumentDataWinterItem>>;/**
+	 * Spring field in *Gallery*
+	 *
+	 * - **Field Type**: Group
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: work.spring[]
+	 * - **Tab**: Spring
+	 * - **Documentation**: https://prismic.io/docs/fields/repeatable-group
+	 */
+	spring: prismic.GroupField<Simplify<WorkDocumentDataSpringItem>>;
 }
 
 /**
