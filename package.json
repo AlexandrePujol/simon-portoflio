@@ -14,6 +14,9 @@
   },
   "dependencies": {
     "@babel/preset-react": "^7.22.5",
+    "@prismicio/client": "^7.22.3",
+    "@prismicio/next": "^2.3.3",
+    "@prismicio/react": "^3.5.1",
     "@react-three/drei": "^9.80.0",
     "@react-three/fiber": "^8.13.6",
     "@siluat/flubber": "^0.4.2",

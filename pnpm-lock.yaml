@@ -11,6 +11,15 @@ importers:
       '@babel/preset-react':
         specifier: ^7.22.5
         version: 7.29.7(@babel/core@7.29.7)
+      '@prismicio/client':
+        specifier: ^7.22.3
+        version: 7.22.3
+      '@prismicio/next':
+        specifier: ^2.3.3
+        version: 2.3.3(@prismicio/client@7.22.3)(next@13.4.19(@babel/core@7.29.7)(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(react@18.2.0)
+      '@prismicio/react':
+        specifier: ^3.5.1
+        version: 3.5.1(@prismicio/client@7.22.3)(react@18.2.0)
       '@react-three/drei':
         specifier: ^9.80.0
         version: 9.122.0(@react-three/fiber@8.18.0(@types/react@18.2.8)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(three@0.160.1))(@types/react@18.2.8)(@types/three@0.160.0)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(three@0.160.1)(use-sync-external-store@1.7.0(react@18.2.0))
@@ -529,6 +538,31 @@ packages:
   '@nolyfill/is-core-module@1.0.39':
     resolution: {integrity: sha512-nn5ozdjYQpUCZlWGuxcJY/KpxkWQs4DcbMCmKojjyrYDEAGy4Ce19NN4v5MduafTwJlbKc99UA8YhSVqq9yPZA==}
     engines: {node: '>=12.4.0'}
+
+  '@prismicio/client@7.22.3':
+    resolution: {integrity: sha512-IOaRlqBSbb7HRaf61bkD7dzGdRvE5qNRjmcdMW/W52Qn0C9y8w3jGW+NJzxKKUs8youR6FilGoh6xqC2t8Sonw==}
+    engines: {node: '>=22'}
+
+  '@prismicio/next@2.3.3':
+    resolution: {integrity: sha512-mS6XwXlxs7kcac++4w01oj9GFNP55IQ17ueLJHTQlsIN/qKjFW9Zz0HhOQzgnaBdbYx5iT0SAVZIk9qlRIrNDg==}
+    engines: {node: '>=20'}
+    peerDependencies:
+      '@prismicio/client': ^7
+      next: ^13.4.5 || ^14 || ^15 || ^16
+      react: ^18 || ^19
+
+  '@prismicio/react@3.5.1':
+    resolution: {integrity: sha512-+hY91LZsywC2NivjkCGYpiwmyeIl2gNAbg0KjLUJVTzJ/LapRLA9RJElq57qWCrWXDVmSkvO88IQd514BU05ew==}
+    engines: {node: '>=22'}
+    peerDependencies:
+      '@prismicio/client': ^7
+      react: ^18 || ^19
+
+  '@prismicio/simulator@0.2.4':
+    resolution: {integrity: sha512-dmxqaihyUkuUbbJwe/AJuE40c6jH233plJiGza8sTGmzNKd/V8tsP11+NuBN0vuFSpZ1zBEWYsZFbsCwHuJZyA==}
+    engines: {node: '>=20'}
+    peerDependencies:
+      '@prismicio/client': ^7
 
   '@radix-ui/primitive@1.0.0':
     resolution: {integrity: sha512-3e7rn8FDMin4CgeL7Z/49smCA3rFYY3Ha2rUQ7HRWFadS5iCRw08ZgVT1LaNTCNqgvrUiyczLflrVrF0SRQtNA==}
@@ -1629,6 +1663,9 @@ packages:
     deprecated: This version is no longer supported. Please see https://eslint.org/version-support for other options.
     hasBin: true
 
+  esm-env@1.2.2:
+    resolution: {integrity: sha512-Epxrv+Nr/CaL4ZcFGPJIYLWFom+YeV1DqMLHJoEd9SYRxNbaFruBwfEX/kkHUJf55j2+TUbmDcmuilbP1TmXHA==}
+
   espree@9.6.1:
     resolution: {integrity: sha512-oruZaFkjorTpF32kDSI5/75ViwGeZginGGy2NoOSg3Q9bnwlnmDm4HLnkl0RE3n+njDXR037aY1+x58Z/zFdwQ==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
@@ -1931,6 +1968,10 @@ packages:
     resolution: {integrity: sha512-hsBTNUqQTDwkWtcdYI2i06Y/nUBEsNEDJKjWdigLvegy8kDuJAS8uRlpkkcQpyEXL0Z/pjDy5HBmMjRCJ2gq+g==}
     engines: {node: '>= 4'}
 
+  imgix-url-builder@0.0.6:
+    resolution: {integrity: sha512-lFVbvaE9vMck8qz9j+y6o7vsyc1vZhdqzWu+Wp/nlnOCi9zAErc31QMkZKYUGMNLLzxOO4YIBAUPndTPah8HFg==}
+    engines: {node: '>=12.7.0'}
+
   immediate@3.0.6:
     resolution: {integrity: sha512-XXOFtyqDjNDAQxVfYxuF7g9Il/IbWmmlQg2MYKOH8ExIT1qg6xc4zyS3HaEEATgs1btfzxq15ciUiY7gjSXRGQ==}
 
@@ -2226,6 +2267,10 @@ packages:
 
   lru-cache@5.1.1:
     resolution: {integrity: sha512-KpNARQA3Iwv+jTA0utUVVbrh+Jlrr1Fv0e56GGzAFOXN7dk/FviaDW8LHmK52DlcH4WP2n6gI8vN1aesBFgo9w==}
+
+  lz-string@1.5.0:
+    resolution: {integrity: sha512-h5bgJWpxJNswbU7qCrV0tIKQCaS3blPDrqKWx+QxzuzL1zGUzij9XCWLrSLsJPu5t+eWA/ycetzYAO5IOMcWAQ==}
+    hasBin: true
 
   maath@0.10.8:
     resolution: {integrity: sha512-tRvbDF0Pgqz+9XUa4jjfgAQ8/aPKmQdWXilFu2tMy4GWj4NOsx99HlULO4IeREfbO3a0sA145DZYyvXPkybm0g==}
@@ -3722,6 +3767,29 @@ snapshots:
 
   '@nolyfill/is-core-module@1.0.39': {}
 
+  '@prismicio/client@7.22.3':
+    dependencies:
+      imgix-url-builder: 0.0.6
+
+  '@prismicio/next@2.3.3(@prismicio/client@7.22.3)(next@13.4.19(@babel/core@7.29.7)(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(react@18.2.0)':
+    dependencies:
+      '@prismicio/client': 7.22.3
+      '@prismicio/simulator': 0.2.4(@prismicio/client@7.22.3)
+      imgix-url-builder: 0.0.6
+      lz-string: 1.5.0
+      next: 13.4.19(@babel/core@7.29.7)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
+      react: 18.2.0
+
+  '@prismicio/react@3.5.1(@prismicio/client@7.22.3)(react@18.2.0)':
+    dependencies:
+      '@prismicio/client': 7.22.3
+      esm-env: 1.2.2
+      react: 18.2.0
+
+  '@prismicio/simulator@0.2.4(@prismicio/client@7.22.3)':
+    dependencies:
+      '@prismicio/client': 7.22.3
+
   '@radix-ui/primitive@1.0.0':
     dependencies:
       '@babel/runtime': 7.29.10
@@ -5000,6 +5068,8 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
+  esm-env@1.2.2: {}
+
   espree@9.6.1:
     dependencies:
       acorn: 8.19.0
@@ -5323,6 +5393,8 @@ snapshots:
 
   ignore@5.3.2: {}
 
+  imgix-url-builder@0.0.6: {}
+
   immediate@3.0.6: {}
 
   import-fresh@3.3.1:
@@ -5626,6 +5698,8 @@ snapshots:
   lru-cache@5.1.1:
     dependencies:
       yallist: 3.1.1
+
+  lz-string@1.5.0: {}
 
   maath@0.10.8(@types/three@0.160.0)(three@0.160.1):
     dependencies:
