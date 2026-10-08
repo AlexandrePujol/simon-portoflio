@@ -6,6 +6,8 @@ import * as THREE from "three";
 import { useFrame, useLoader } from "@react-three/fiber";
 import { Power4, gsap } from "gsap";
 import { motion } from "motion/react";
+import type { ImageField, RichTextField } from "@prismicio/client";
+import { richTextAsText } from "@/utils/richText";
 
 import { ease } from "@/utils/store";
 import { useWindowSize } from "@/hooks";
@@ -18,7 +20,11 @@ import TouchTexture from "../three/TouchTexture";
 import vertexShader from "@shaders/HomePhotoShader/vertex.glsl";
 import fragmentShader from "@shaders/HomePhotoShader/fragment.glsl";
 
-const HeroPhoto = () => {
+type HeroPhotoProps = {
+  imageUrl: string;
+};
+
+const HeroPhoto = ({ imageUrl }: HeroPhotoProps) => {
   // setting up the values
   const [photoData, setPhotoData] = useState({
     x: 0,
@@ -42,7 +48,7 @@ const HeroPhoto = () => {
   // loading the texture
   const [texture, displacementMap] = useLoader(
     THREE.TextureLoader,
-    ["/assets/photos/home/00_ACCUEIL.jpeg", "/assets/disp/disp1.jpg"],
+    [imageUrl, "/assets/disp/disp1.jpg"],
     () => {
       setTimeout(() => {
         setLoadedRatio((prev) => prev + 0.5);
@@ -159,21 +165,31 @@ const HeroPhoto = () => {
   );
 };
 
-const Scene = () => {
+type SceneProps = {
+  imageUrl: string;
+};
+
+const Scene = ({ imageUrl }: SceneProps) => {
   return (
     <CustomCanvas>
-      <HeroPhoto />
+      <HeroPhoto imageUrl={imageUrl} />
     </CustomCanvas>
   );
 };
 
-export const HeroHome = () => {
+type Props = {
+  image: ImageField<never>;
+  tagline: RichTextField;
+};
+
+export const HeroHome = ({ image, tagline }: Props) => {
   const { isLoaded } = useLoadingContext();
+  const imageUrl = image.url ?? "";
 
   return (
     <>
       <div className="hidden sm:block h-[var(--fullScreen)] z-10 fixed top-0 left-0 right-0 ">
-        <Scene />
+        <Scene imageUrl={imageUrl} />
       </div>
       <div className="h-[calc(var(--fullScreen)-1.5rem)] flex flex-col justify-between gap-6 pt-10 pb-10">
         <div
@@ -183,8 +199,8 @@ export const HeroHome = () => {
           className="h-full relative opacity-100 cursor-none pointer-events-auto sm:opacity-0"
         >
           <Image
-            alt="house in a green field"
-            src="/assets/photos/home/00_ACCUEIL.jpeg"
+            alt={image.alt ?? "house in a green field"}
+            src={imageUrl}
             fill
             priority
             className="object-cover"
@@ -199,9 +215,7 @@ export const HeroHome = () => {
             transition={{ ease: "easeOut", delay: 0.15 }}
             className="hidden md:block pb-1 flex-1 "
           >
-            Through photography, I aim to isolate elements from their primary{" "}
-            <br className="lg:hidden xl:block" />
-            function in order to reveal their aesthetic dimension.
+            {richTextAsText(tagline)}
           </motion.h2>
           <h1
             className={`${spartan.className}  text-end flex-1 md:flex-none text-2xl align-bottom leading-none sm:flex-1 sm:text-[48px] lg:text-[64px]`}

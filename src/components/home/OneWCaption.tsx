@@ -8,7 +8,7 @@ import { useInView, motion } from "motion/react";
 
 type Props = {
   photo: Photo;
-  children: JSX.Element;
+  children: React.ReactNode;
 };
 
 export const OneWCaption = ({ photo, children }: Props) => {

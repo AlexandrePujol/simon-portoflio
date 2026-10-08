@@ -2,10 +2,15 @@ import React, { useRef } from "react";
 
 import { AnimatedWords } from "../atoms";
 import { useInView } from "motion/react";
+import { asText, type RichTextField } from "@prismicio/client";
 
-type Props = {};
+type Props = {
+  title: RichTextField;
+  textLeft: RichTextField;
+  textRight: RichTextField;
+};
 
-export const About = (props: Props) => {
+export const About = ({ title, textLeft, textRight }: Props) => {
   const ref = useRef(null);
   const isInView = useInView(ref);
 
@@ -21,8 +26,7 @@ export const About = (props: Props) => {
           stagger={0.01}
           start={isInView}
           fontWeight="font-bold"
-          string="What is supposed to be photogenic does not interest me as much as its
-        inherent beauty."
+          string={asText(title)}
         />
       </div>
       <div />
@@ -37,8 +41,7 @@ export const About = (props: Props) => {
           stagger={0.005}
           start={isInView}
           fontWeight="font-medium"
-          string="It is more intriguing to me to offer a unique and original composition
-          of something that is ultimately ordinary."
+          string={asText(textLeft)}
         />
       </div>
       <div
@@ -51,9 +54,7 @@ export const About = (props: Props) => {
           stagger={0.005}
           start={isInView}
           fontWeight="font-medium"
-          string="Without pretension, I would like to pay tribute here to all objects, all
-          bodies, all gestures, all buildings, and all the details that have
-          inspired me when we crossed paths somewhere."
+          string={asText(textRight)}
         />
       </div>
     </div>

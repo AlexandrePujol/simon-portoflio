@@ -16,15 +16,17 @@ import { useCursorContext } from "../../context/CursorContext";
 import { useRouter } from "next/router";
 import { useLoadingContext } from "@/context/LoadingContext";
 import Link from "next/link";
+import type { ImageField } from "@prismicio/client";
 
-type Props = {
+type SceneProps = {
   footerSize: {
     width: number;
     height: number;
   };
+  imageUrl: string;
 };
 
-const OutroScene = ({ footerSize }: Props) => {
+const OutroScene = ({ footerSize, imageUrl }: SceneProps) => {
   const meshRef = useRef<any>();
   const shaderRef = useRef<any>(null);
   const router = useRouter();
@@ -39,7 +41,7 @@ const OutroScene = ({ footerSize }: Props) => {
     touchTexture.addTouch(e);
   };
 
-  const texture = useTexture("/assets/photos/spring/26_REST_AREA.jpeg", () => {
+  const texture = useTexture(imageUrl, () => {
     setLoadedRatio((prev) => prev + 0.5);
   });
 
@@ -153,7 +155,11 @@ const ArrowRight = ({ size = 24 }: ArrowProps) => {
   );
 };
 
-export const Outro = () => {
+type Props = {
+  image: ImageField<never>;
+};
+
+export const Outro = ({ image }: Props) => {
   const ref = useRef<HTMLDivElement>(null);
   const arrowRef = useRef<HTMLDivElement>(null);
   const galleryRef = useRef<HTMLDivElement>(null);
@@ -228,7 +234,7 @@ export const Outro = () => {
       </div>
 
       <CustomCanvas>
-        <OutroScene footerSize={footerSize} />
+        <OutroScene footerSize={footerSize} imageUrl={image.url ?? ""} />
       </CustomCanvas>
     </div>
   );

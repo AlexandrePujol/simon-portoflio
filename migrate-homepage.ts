@@ -139,6 +139,8 @@ migration.createDocument(
       about_text_right: paragraph(
         "Without pretension, I would like to pay tribute here to all objects, all bodies, all gestures, all buildings, and all the details that have inspired me when we crossed paths somewhere.",
       ),
+      // The migration types expect a non-empty tuple; `gallery` is a plain
+      // array of a known-fixed length, so the shape is correct at runtime.
       gallery: gallery.map((item) => ({
         photo: asset(item.path, item.alt),
         title: item.title,
@@ -147,11 +149,15 @@ migration.createDocument(
         blurb: item.blurbText
           ? paragraphWithBold(item.blurbText, item.blurbBold ?? [])
           : [],
-      })),
+      })) as any,
       outro_image: asset(
         "assets/photos/spring/26_REST_AREA.jpeg",
         "Outro background photo",
       ),
+      slices: [],
+      meta_title: null,
+      meta_description: null,
+      meta_image: undefined,
     },
   },
   "Homepage",
