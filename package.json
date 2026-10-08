@@ -10,7 +10,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "ts-node": "ts-node --compiler-options \"{\\\"module\\\":\\\"commonjs\\\"}\""
+    "ts-node": "ts-node --compiler-options \"{\\\"module\\\":\\\"commonjs\\\"}\"",
+    "migrate:homepage": "tsx migrate-homepage.ts"
   },
   "dependencies": {
     "@babel/preset-react": "^7.22.5",
@@ -50,6 +51,8 @@
     "uuid": "^9.0.0"
   },
   "devDependencies": {
-    "dialkit": "^2.0.2"
+    "dialkit": "^2.0.2",
+    "dotenv": "^18.0.6",
+    "tsx": "^4.23.15"
   }
 }
