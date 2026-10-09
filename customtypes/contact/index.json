@@ -42,6 +42,12 @@
           "label": "Contact info"
         },
         "type": "Group"
+      },
+      "dominant_color": {
+        "config": {
+          "label": "Dominant color"
+        },
+        "type": "Color"
       }
     },
     "SEO & Metadata": {
