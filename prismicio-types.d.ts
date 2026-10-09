@@ -118,7 +118,18 @@ interface ContactDocumentData {
 	 * - **Tab**: Main
 	 * - **Documentation**: https://prismic.io/docs/fields/repeatable-group
 	 */
-	contact_info: prismic.GroupField<Simplify<ContactDocumentDataContactInfoItem>>;/**
+	contact_info: prismic.GroupField<Simplify<ContactDocumentDataContactInfoItem>>;
+	
+	/**
+	 * Dominant color field in *Contact*
+	 *
+	 * - **Field Type**: Color
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: contact.dominant_color
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/fields/color
+	 */
+	dominant_color: prismic.ColorField;/**
 	 * Meta Title field in *Contact*
 	 *
 	 * - **Field Type**: Text
