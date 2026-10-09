@@ -1,0 +1,78 @@
+{
+  "format": "page",
+  "id": "contact",
+  "json": {
+    "Main": {
+      "slices": {
+        "config": {
+          "choices": {}
+        },
+        "fieldset": "Slice Zone",
+        "type": "Slices"
+      },
+      "portrait": {
+        "config": {
+          "label": "Portrait"
+        },
+        "type": "Image"
+      },
+      "contact_info": {
+        "config": {
+          "fields": {
+            "label": {
+              "config": {
+                "label": "Label"
+              },
+              "type": "Text"
+            },
+            "content": {
+              "config": {
+                "label": "Content"
+              },
+              "type": "Text"
+            },
+            "link": {
+              "config": {
+                "label": "Link",
+                "select": "web"
+              },
+              "type": "Link"
+            }
+          },
+          "label": "Contact info"
+        },
+        "type": "Group"
+      }
+    },
+    "SEO & Metadata": {
+      "meta_title": {
+        "config": {
+          "label": "Meta Title",
+          "placeholder": "A title of the page used for social media and search engines"
+        },
+        "type": "Text"
+      },
+      "meta_description": {
+        "config": {
+          "label": "Meta Description",
+          "placeholder": "A brief summary of the page"
+        },
+        "type": "Text"
+      },
+      "meta_image": {
+        "config": {
+          "constraint": {
+            "height": 1260,
+            "width": 2400
+          },
+          "label": "Meta Image",
+          "thumbnails": []
+        },
+        "type": "Image"
+      }
+    }
+  },
+  "label": "Contact",
+  "repeatable": false,
+  "status": true
+}
