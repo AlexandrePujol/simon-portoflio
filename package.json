@@ -13,7 +13,9 @@
     "ts-node": "ts-node --compiler-options \"{\\\"module\\\":\\\"commonjs\\\"}\"",
     "migrate:homepage": "tsx migrate-homepage.ts",
     "migrate:work": "tsx migrate-work.ts",
-    "prune:assets": "tsx prune-assets.ts"
+    "migrate:contact": "tsx migrate-contact.ts",
+    "prune:assets": "tsx prune-assets.ts",
+    "backfill:colors": "tsx backfill-dominant-colors.ts"
   },
   "dependencies": {
     "@babel/preset-react": "^7.22.5",
