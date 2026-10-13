@@ -4,7 +4,6 @@ const sharp = require("sharp");
 
 import { capitalizeWord } from "../src/utils/helpers";
 import { photos } from "../src/data/photos";
-import { ExtendedPhoto } from "@/types";
 
 // loop through evey photos in the summer, winter, fall, spring folder
 // get the name of every files
@@ -30,13 +29,13 @@ const fetchFoldersNames = () => {
 
 const folders = fetchFoldersNames();
 // all the photos with group === "winter"
-const winterPhotos = photos.filter((photo: ExtendedPhoto) => {
+const winterPhotos = photos.filter((photo: any) => {
   return photo.group === "winter";
 });
 
 // LOOP THROUGH EVERY PHOTOS IN THE SUMMER, WINTER, FALL, SPRING FOLDER
 folders.forEach((folder: string) => {
-  const folderPhotos = photos.filter((photo: ExtendedPhoto) => {
+  const folderPhotos = photos.filter((photo: any) => {
     return photo.group === folder;
   });
   // get the name of every files
@@ -47,7 +46,7 @@ folders.forEach((folder: string) => {
 
     if (
       !folderPhotos.some(
-        (photo: ExtendedPhoto) => photo.src === p || file.includes(".DS_Store")
+        (photo: any) => photo.src === p || file.includes(".DS_Store")
       )
     ) {
       sharp(`./public/${p}`)

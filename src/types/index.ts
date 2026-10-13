@@ -1,4 +1,5 @@
 export type Photo = {
+  id: string;
   src: string;
   mobileSrc?: string;
   alt: string;

@@ -1,13 +1,13 @@
-import { photos } from "@/data/photos";
 import { ExtendedPhoto } from "@/types";
 import React, { useEffect, useState } from "react";
 import { useLocomotiveScroll } from "react-locomotive-scroll";
 
 type Props = {
+  photos: ExtendedPhoto[];
   photoGroup: "summer" | "autumn" | "winter" | "spring";
 };
 
-const usePhotosDisplayed = ({ photoGroup }: Props) => {
+const usePhotosDisplayed = ({ photos, photoGroup }: Props) => {
   const { scroll } = useLocomotiveScroll();
   const [photosDisplayed, setPhotosDisplayed] = useState<ExtendedPhoto[]>([]);
 

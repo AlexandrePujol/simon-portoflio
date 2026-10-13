@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { GetStaticPropsContext, InferGetStaticPropsType } from "next";
 
 import { Container } from "@/components/molecules";
 import { Photo, WorkFooter } from "@/components/work";
@@ -6,8 +7,6 @@ import {
   OverviewProvider,
   useOverviewContext,
 } from "@/context/OverviewContext";
-
-import { photos } from "@/data/photos";
 
 import { AnimatePresence, motion } from "motion/react";
 
@@ -21,19 +20,33 @@ import { PhotoInfo } from "@/types";
 import usePhotosDisplayed from "../hooks/usePhotosDisplayed";
 import useUpdateTitle from "../hooks/useUpdateTitle";
 import useFlipAnimation from "../hooks/useFlipAnimation";
+import { createClient } from "@/prismicio";
+import { createAlt } from "@/utils/helpers";
 
 gsap.registerPlugin(Flip);
 
-export type Props = {
+const CATEGORIES = ["summer", "autumn", "winter", "spring"] as const;
+type Category = (typeof CATEGORIES)[number];
+
+export const getStaticProps = async ({
+  previewData,
+}: GetStaticPropsContext) => {
+  const client = createClient({ previewData });
+  const page = await client.getSingle("work");
+
+  return { props: { page } };
+};
+
+type Props = {
   photos: ExtendedPhoto[];
-  photoGroup: "summer" | "autumn" | "winter" | "spring";
+  photoGroup: Category;
   setInfos: (infos: PhotoInfo) => void;
 };
 
-const Gallery = ({ photoGroup, setInfos }: Props) => {
+const Gallery = ({ photos, photoGroup, setInfos }: Props) => {
   const { isOverview } = useOverviewContext();
 
-  const photosDisplayed = usePhotosDisplayed({ photoGroup });
+  const photosDisplayed = usePhotosDisplayed({ photos, photoGroup });
   setInfos(useUpdateTitle({ photosDisplayed }));
 
   const { setPhotoTarget } = useFlipAnimation();
@@ -48,7 +61,7 @@ const Gallery = ({ photoGroup, setInfos }: Props) => {
           }
         >
           {photosDisplayed.map((photo: ExtendedPhoto, idx: number) => (
-            <div id={photo.alt} key={photo.alt}>
+            <div id={photo.id} key={photo.id}>
               <motion.div
                 key={photoGroup}
                 initial={{ opacity: 0 }}
@@ -70,26 +83,38 @@ const Gallery = ({ photoGroup, setInfos }: Props) => {
   );
 };
 
-export default function Work() {
+export default function Work({
+  page,
+}: InferGetStaticPropsType<typeof getStaticProps>) {
   const [infos, setInfos] = useState<PhotoInfo>({
     title: "",
     place: "",
     date: "",
   });
 
-  const [photoGroup, setPhotoGroup] = useState<
-    "summer" | "autumn" | "winter" | "spring"
-  >("summer");
+  const [photoGroup, setPhotoGroup] = useState<Category>("summer");
 
   useEffect(() => {
     gsap.registerPlugin(ScrollToPlugin);
-    // updateAspectRatio(photos);
-    // updateDominantColors(photos).then((photos) => {
-    //   console.log(JSON.stringify(photos));
-    // });
   }, []);
 
-  if (!photos) return;
+  const photos: ExtendedPhoto[] = CATEGORIES.flatMap((category) =>
+    page.data[category].map((item) => ({
+      id: item.photo.id ?? item.photo.url ?? "",
+      src: item.photo.url ?? "",
+      alt: item.photo.alt ?? createAlt(item.photo.url ?? ""),
+      dominantColor: item.dominant_color ?? undefined,
+      aspectRatio: item.photo.dimensions
+        ? item.photo.dimensions.width / item.photo.dimensions.height
+        : 1,
+      capitalizedTitle: item.title ?? "",
+      place: item.place ?? "",
+      date: item.date ?? "",
+      group: category,
+    })),
+  );
+
+  if (!photos.length) return null;
 
   return (
     <Container className="pt-0 bg-light relative">

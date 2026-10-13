@@ -23,7 +23,7 @@ export const Photo = ({ idx, photo, setPhotoTarget }: Props) => {
   const handleClick = async () => {
     // wait for the change of state for the overview before scrolling
     handleOverviewSwitch(false); // <- don't believe what VSC tells u, if u remove the await the smooth scroll won't work
-    setPhotoTarget(photo.alt);
+    setPhotoTarget(photo.id);
   };
 
   useEffect(() => {
@@ -37,8 +37,8 @@ export const Photo = ({ idx, photo, setPhotoTarget }: Props) => {
     return (
       <div
         ref={ref}
-        id={photo.alt}
-        data-flip-id={photo.alt}
+        id={photo.id}
+        data-flip-id={photo.id}
         className="gallery-photo h-[25vh] relative"
         onMouseEnter={() => {
           setCursorType("hover");
@@ -61,7 +61,7 @@ export const Photo = ({ idx, photo, setPhotoTarget }: Props) => {
   return (
     <div
       ref={ref}
-      data-flip-id={photo.alt}
+      data-flip-id={photo.id}
       className="gallery-photo  h-[calc(100vh)] sm:h-[calc(100vh-32px)] my-4 relative "
     >
       <LazyPhoto
