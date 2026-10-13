@@ -2,6 +2,10 @@
   "repositoryName": "24ead4e0",
   "routes": [
     {
+      "type": "contact",
+      "path": "/contact"
+    },
+    {
       "type": "homepage",
       "path": "/"
     },
