@@ -40,8 +40,10 @@ export default function Home({
   page,
 }: InferGetStaticPropsType<typeof getStaticProps>) {
   const photos: Photo[] = page.data.gallery.map((item, idx) => ({
+    id: item.photo.id ?? String(idx),
     src: item.photo.url ?? "",
     alt: item.photo.alt ?? createAlt(item.photo.url ?? ""),
+    dominantColor: item.dominant_color ?? undefined,
     caption: {
       idx: String(idx + 1),
       title: item.title ?? "",
