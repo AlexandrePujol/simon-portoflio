@@ -108,41 +108,41 @@ export const WorkFooter = ({
   };
 
   return (
-    <div className="flex items-end relative left-0 top-0 h-0 z-[1] px-10 w-full mix-blend-difference">
-      <AnimatePresence mode="popLayout">
-        <div className="fixed bottom-4 left-10 right-10 flex justify-between items-end text-light">
-          <motion.div
-            key={infos.title}
-            variants={fadeOut}
-            initial="hidden"
-            animate={isOverview ? "hidden" : "visible"}
-            exit="hidden"
-            className={`font-bold w-1/2 leading-[1.1] sm:width-auto pointer-events-none flex flex-col sm:block
+    // The blend mode lives on the fixed bar itself: on a 0px-tall wrapper,
+    // Safari clips the blend layer to the wrapper's box and the bar vanishes.
+    <AnimatePresence mode="popLayout">
+      <div className="fixed bottom-4 left-10 right-10 z-[1] flex justify-between items-end text-light mix-blend-difference">
+        <motion.div
+          key={infos.title}
+          variants={fadeOut}
+          initial="hidden"
+          animate={isOverview ? "hidden" : "visible"}
+          exit="hidden"
+          className={`font-bold w-1/2 leading-[1.1] sm:width-auto pointer-events-none flex flex-col sm:block
             ${isOverview ? "pointer-events-none" : "pointer-events-auto"}`}
-          >
-            <span className="text-light">{infos.title} </span>
-            <span className="font-light text-xs sm:ml-1">
-              {infos.place} - {infos.date}
-            </span>
+        >
+          <span className="text-light">{infos.title} </span>
+          <span className="font-light text-xs sm:ml-1">
+            {infos.place} - {infos.date}
+          </span>
+        </motion.div>
+        <div className="flex items-end gap-8 sm:flex-row sm:gap-40">
+          <motion.div>
+            <GroupSelector
+              photoGroup={photoGroup}
+              setPhotoGroup={setPhotoGroup}
+            />
           </motion.div>
-          <div className="flex items-end gap-8 sm:flex-row sm:gap-40">
-            <motion.div>
-              <GroupSelector
-                photoGroup={photoGroup}
-                setPhotoGroup={setPhotoGroup}
-              />
-            </motion.div>
-            <div
-              onClick={handleOverview}
-              onMouseEnter={() => setCursorType("hover")}
-              onMouseLeave={() => setCursorType("pointer")}
-              className="cursor-pointer ml-8 sm:ml-0"
-            >
-              <SVGButtons />
-            </div>
+          <div
+            onClick={handleOverview}
+            onMouseEnter={() => setCursorType("hover")}
+            onMouseLeave={() => setCursorType("pointer")}
+            className="cursor-pointer ml-8 sm:ml-0"
+          >
+            <SVGButtons />
           </div>
         </div>
-      </AnimatePresence>
-    </div>
+      </div>
+    </AnimatePresence>
   );
 };

@@ -30,6 +30,11 @@ export const LazyPhoto = ({
     alt: alt || "photo",
     src,
     priority,
+    // Match the rendered width (overview grid is 2/4/5 columns) so Next
+    // doesn't default to 100vw and ship full-size files for thumbnails.
+    sizes: isOverview
+      ? "(min-width: 768px) 20vw, (min-width: 640px) 25vw, 50vw"
+      : "100vw",
   };
 
   useEffect(() => {

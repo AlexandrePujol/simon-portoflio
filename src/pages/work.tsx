@@ -47,7 +47,8 @@ const Gallery = ({ photos, photoGroup, setInfos }: Props) => {
   const { isOverview } = useOverviewContext();
 
   const photosDisplayed = usePhotosDisplayed({ photos, photoGroup });
-  setInfos(useUpdateTitle({ photosDisplayed }));
+  const infos = useUpdateTitle({ photosDisplayed });
+  useEffect(() => setInfos(infos), [infos, setInfos]);
 
   const { setPhotoTarget } = useFlipAnimation();
 

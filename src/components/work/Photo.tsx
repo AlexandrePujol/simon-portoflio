@@ -65,7 +65,8 @@ export const Photo = ({ idx, photo, setPhotoTarget }: Props) => {
       className="gallery-photo  h-[calc(100vh)] sm:h-[calc(100vh-32px)] my-4 relative "
     >
       <LazyPhoto
-        priority={idx < 9}
+        // only the first full-screen photos are on screen at load
+        priority={idx < 2}
         src={photo.src}
         alt={photo.alt}
         aspectRatio={photo.aspectRatio}

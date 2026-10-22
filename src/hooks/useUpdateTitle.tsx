@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useLocomotiveScroll } from "react-locomotive-scroll";
 
 import { ExtendedPhoto, PhotoInfo } from "@/types";
@@ -17,32 +17,38 @@ const useUpdateTitle = ({ photosDisplayed }: Props) => {
     date: "",
   });
 
-  const handleSmoothScroll = (e: any) => {
-    const idx = Math.round(
-      (e.scroll.y / e.limit.y) * (photosDisplayed.length - 1)
-    );
+  // Scroll events fire every frame; only push new infos when the photo
+  // actually changes so the footer doesn't re-render ~60 times a second.
+  const currentIdx = useRef(0);
 
-    setInfos?.({
+  const updateInfos = (idx: number) => {
+    if (idx === currentIdx.current) return;
+    currentIdx.current = idx;
+
+    setInfos({
       title: photosDisplayed[idx]?.capitalizedTitle,
       place: photosDisplayed[idx]?.place,
       date: photosDisplayed[idx]?.date,
     });
+  };
+
+  const handleSmoothScroll = (e: any) => {
+    updateInfos(
+      Math.round((e.scroll.y / e.limit.y) * (photosDisplayed.length - 1))
+    );
   };
 
   const handleWindowScroll = () => {
-    const idx = Math.round(
-      (window.scrollY / document.body.scrollHeight) *
-        (photosDisplayed.length - 1)
+    updateInfos(
+      Math.round(
+        (window.scrollY / document.body.scrollHeight) *
+          (photosDisplayed.length - 1)
+      )
     );
-
-    setInfos?.({
-      title: photosDisplayed[idx]?.capitalizedTitle,
-      place: photosDisplayed[idx]?.place,
-      date: photosDisplayed[idx]?.date,
-    });
   };
 
   useEffect(() => {
+    currentIdx.current = 0;
     setInfos({
       title: photosDisplayed[0]?.capitalizedTitle,
       place: photosDisplayed[0]?.place,
